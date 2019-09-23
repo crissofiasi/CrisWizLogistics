@@ -1,9 +1,4 @@
-﻿// Decompiled with JetBrains decompiler
-// Type: WizLogistics.WizLogisticsDataSetTableAdapters.SaleOrderLinesTableAdapter
-// Assembly: WizLogistics2, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-// MVID: 9944E73C-68D5-4BC1-954E-5CC5CE300CD2
-// Assembly location: \\10.10.10.26\wwwroot\cris\bin\WizLogistics2.dll
-
+﻿
 using System;
 using System.CodeDom.Compiler;
 using System.ComponentModel;
