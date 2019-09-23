@@ -1,0 +1,242 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="CrisWizLogistics.SiteMaster" %>
+
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title><%: Page.Title %> - WizLogistics</title>    
+
+
+    <!-- jQuery 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+
+<!-- jQuery UI theme or Bootstrap (optional, if you create a custom theme) -->
+<link href="css/keyboard.css" rel="stylesheet">
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery UI position utility (optional, if you position the keyboard yourself) 
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js"></script>
+
+<!-- keyboard widget css & script -->
+
+<!-- css for the preview keyset extension -->
+<link href="css/keyboard-previewkeyset.css" rel="stylesheet">
+
+<!-- keyboard optional extensions - include ALL (includes mousewheel) 
+<script src="js/jquery.keyboard.extension-all.js"></script>
+<!-- or include individual extensions, as desired -->
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="Content/Reset.css" />
+    <link rel="stylesheet" type="text/css" href="Content/Site.css" />
+
+    <script src="Scripts/jquery-1.10.2.js"></script>
+    <script src="js/jquery.keyboard.js"></script>
+    
+    <% if(Request.Cookies["VirtualKeyBoard"]!=null)
+           if (Convert.ToInt16(Request.Cookies["VirtualKeyBoard"].Value) == 1)
+           { %>
+        
+       
+ 
+
+    <script>
+        $(function () {
+            $('input[type=text]').keyboard({
+                layout: 'custom',
+                customLayout: {
+                    'normal': [
+                        '7 8 9 {b}',
+                        '4 5 6 {clear}',
+                        '1 2 3 {c}',
+                        '0 {dec} {meta1} {a}'
+                    ],
+
+                    'meta1': [
+                        'terminal1 LTP PIL SO',
+                        'T12 T16I T16II ST1 ST2 ',
+                        'PMAST PERM MULM FRET',
+                        'FASCOL FASBAR DEB FRET',
+                        '{meta1}  {a} {c} {b} {clear}'
+                    ],
+                },
+                display: {
+                    'meta1': '\u22EE:Alternate character set',  
+                },
+
+
+            });
+        });
+	</script>
+     <%} %>
+
+
+
+    <script type="text/javascript">
+        // Pre-load our images so that they are in the in-memory image cache
+        var imgLeftOff1 = new Image();
+        var imgLeftOn1 = new Image();
+        var imgLeftOff2 = new Image();
+        var imgLeftOn2 = new Image();
+        var imgLeftOff3 = new Image();
+        var imgLeftOn3 = new Image();
+        var imgLeftOff4 = new Image();
+        var imgLeftOn4 = new Image();
+        var imgLeftOff5 = new Image();
+        var imgLeftOn5 = new Image();
+        var imgLeftOff6 = new Image();
+        var imgLeftOn6 = new Image();
+        var imgMiddleOn = new Image();
+        var imgMiddleOff = new Image();
+        var imgRightOff = new Image();
+        var imgRightOn = new Image();
+
+        imgLeftOff1.src = "Images/button1_left_off.png";
+        imgLeftOn1.src = "Images/button1_left_on.png";
+        imgLeftOff2.src = "Images/button2_left_off.png";
+        imgLeftOn2.src = "Images/button2_left_on.png";
+        imgLeftOff3.src = "Images/button3_left_off.png";
+        imgLeftOn3.src = "Images/button3_left_on.png";
+        imgLeftOff4.src = "Images/button4_left_off.png";
+        imgLeftOn4.src = "Images/button4_left_on.png";
+        imgLeftOff5.src = "Images/button5_left_off.png";
+        imgLeftOn5.src = "Images/button5_left_on.png";
+        imgLeftOff6.src = "Images/button6_left_off.png";
+        imgLeftOn6.src = "Images/button6_left_on.png";
+        imgMiddleOff.src = "Images/button_middle_off.png";
+        imgMiddleOn.src = "Images/button_middle_on.png";
+        imgRightOff.src = "Images/button_right_off.png";
+        imgRightOn.src = "Images/button_right_on.png";
+
+        function RemoveFocus(buttonElem, imgLeftElem, imgRightElem, textElem) {
+            buttonElem.style.backgroundImage = "url('Images/button_middle_off.png')";
+            buttonElem.style.backgroundRepeat = "repeat-x";
+            buttonElem.style.backgroundColor = "#E9E9E9";
+
+            switch (buttonElem.id) {
+                case "button1":
+                    imgLeftElem.src = imgLeftOff1.src;
+                    break;
+                case "button2":
+                    imgLeftElem.src = imgLeftOff2.src;
+                    break;
+                case "button3":
+                    imgLeftElem.src = imgLeftOff3.src;
+                    break;
+                case "button4":
+                    imgLeftElem.src = imgLeftOff4.src;
+                    break;
+                case "button5":
+                    imgLeftElem.src = imgLeftOff5.src;
+                    break;
+                case "button6":
+                    imgLeftElem.src = imgLeftOff6.src;
+                    break;
+            }
+
+            imgRightElem.src = imgRightOff.src;
+            textElem.style.color = "#4C4C4C";
+        }
+
+        function SetFocus(buttonElem, imgLeftElem, imgRightElem, textElem) {
+            buttonElem.style.backgroundImage = "url('Images/button_middle_on.png')";
+            buttonElem.style.backgroundRepeat = "repeat-x";
+            buttonElem.style.backgroundColor = "#C4C4C4";
+
+            switch (buttonElem.id) {
+                case "button1":
+                    imgLeftElem.src = imgLeftOn1.src;
+                    break;
+                case "button2":
+                    imgLeftElem.src = imgLeftOn2.src;
+                    break;
+                case "button3":
+                    imgLeftElem.src = imgLeftOn3.src;
+                    break;
+                case "button4":
+                    imgLeftElem.src = imgLeftOn4.src;
+                    break;
+                case "button5":
+                    imgLeftElem.src = imgLeftOn5.src;
+                    break;
+                case "button6":
+                    imgLeftElem.src = imgLeftOn6.src;
+                    break;
+            }
+
+            imgRightElem.src = imgRightOn.src;
+            textElem.style.color = "#000000";
+        }
+
+        function validate(e) {
+            alert('start');
+            var keycode;
+
+            if (window.event)
+                keycode = window.event.keyCode;
+            else if (e)
+                keycode = e.which;
+
+            alert(keycode);
+        }
+    </script>
+
+ <style>
+
+
+ </style>
+ 
+
+
+</head>
+
+<body>   
+ 
+
+    <form runat="server">    
+    <div id="header">
+         <script src="js/jquery.keyboard.js"></script>
+
+        <div class="content-wrapper">            
+            <div class="float-left">
+                <p class="site-title">
+                    <a>WizLogistics</a>
+                </p>
+            </div>           
+            <div id="loginView">
+                <asp:LoginView runat="server" ViewStateMode="Disabled">
+                    <LoggedInTemplate>
+                        <p>
+                            <a><asp:LoginName runat="server" CssClass="username" /></a>
+                            <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Deconectare" LogoutPageUrl="~/Login" />                               
+                        </p>
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>            
+        </div>
+    </div>
+    <div id="body">        
+        <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+        <div class="content-wrapper main-content clear-fix">
+             
+   
+            <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+        </div>
+    </div>
+    <div id="footer">
+        <div class="content-wrapper">            
+            <p>&copy; <%: DateTime.Now.Year %> - Wizrom Software</p>            
+            <p>changed by Cristi</p>
+            <p><a href="vkb.aspx">vkb</a></p>
+        </div>
+    </div>
+    </form>  
+    
+</body>
+</html>

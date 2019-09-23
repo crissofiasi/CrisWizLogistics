@@ -1,0 +1,550 @@
+﻿/* general format
+----------------------------------------------------------*/
+
+html {
+    background-color: #e2e2e2;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color:  #fff;
+    border-top: solid 2px #000;
+    border-bottom: 0;
+    color: #333;
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #333;
+    outline: none;    
+}
+
+    a:link, a:visited,
+    a:active, a:hover {
+        color: white;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+    }
+
+    a:hover {
+        color: white;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+    }
+
+header, footer, hgroup,
+nav, section {
+    display: block;
+}
+
+mark {
+    background-color: #a6dbed;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clear-fix:after {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+h1, h2, h3,
+h4, h5, h6 {
+    color: #000;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+    h5 a:link, h5 a:visited, h5 a:active {
+        padding: 0;        
+    }
+
+
+/* main layout
+----------------------------------------------------------*/
+
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 960px;        
+    padding-right: 10px;
+    padding-left: 10px;     
+}
+
+#header .content-wrapper {
+    padding-top: 0;          
+}
+
+#body {
+    background-color: #efeeef;
+    clear: both;
+    padding-bottom: 12px;
+}
+    
+    .main-content {
+        padding-top: 0;        
+    }
+    
+#footer {
+    clear: both;
+    background-color: #e2e2e2;
+    font-size: .8em;
+    text-align: center;
+    height: auto;        
+    padding: 10px 0;
+}
+
+    #footer p {
+        margin: 0;
+    }
+
+
+/* site title
+----------------------------------------------------------*/
+.site-title {
+    color: #7ac0da;
+    font-family: Rockwell, Consolas, "Courier New", Courier, monospace;
+    font-size: 2.3em;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+.site-title a, .site-title a:hover, .site-title a:active {
+    background: none;
+    color: #7ac0da;
+    outline: none;
+    text-decoration: none;
+}
+
+
+/* login view
+----------------------------------------------------------*/
+#loginView {
+    display: block;
+    font-size: .85em;
+    margin-top: 5px;
+    text-align: right;
+}
+
+    #loginView a {
+        background: none;
+        color: #999;
+        font-weight: 600;
+        margin: 0;
+        padding: 0;        
+    }
+
+    #loginView a:hover {
+        color: #333;
+    }
+
+    #loginView a .username {
+        font-weight: 500;
+    }
+
+
+/* tab menu
+----------------------------------------------------------*/
+ul.tab-menu {
+    font-size: 1.3em;
+    font-weight: 600;    
+    padding: 0;
+    text-align: left;
+    float: left;
+    width: 100%;
+}
+
+    ul.tab-menu li {
+        display: inline;
+        list-style: none;
+        margin-right: 0;
+        padding: 4px;  
+    }
+
+        ul.tab-menu li.tab-selected {
+            background-color: #3e5667;            
+        }
+
+        ul.tab-menu li a {                        
+            color: #999;
+            text-decoration: none;
+            /*x-focus-border: none;*/                   
+        }        
+
+        ul.tab-menu li a:hover {
+            color: #333;
+            text-decoration: none;            
+        }
+
+
+/* page elements
+----------------------------------------------------------*/
+
+/* featured */
+.featured {
+    background-color: #fff;
+}
+
+    .featured .content-wrapper {
+        background-color: #7ac0da;
+        color: #3e5667;
+        padding: 4px 0 20px 10px;
+    }
+
+        .featured hgroup.title h1, .featured hgroup.title h2 {
+            color: #fff;
+        }
+
+        .featured p {
+            font-size: 1.1em;
+        }
+
+/* page titles */
+hgroup.title {
+    margin-bottom: 10px;
+}
+
+hgroup.title h1, hgroup.title h2 {
+    display: inline;
+}
+
+hgroup.title h2 {
+    font-weight: normal;
+    margin-left: 3px;
+}
+
+/* content */
+article, aside {
+    float: none;
+    width: 100%;
+}
+
+    aside ul {
+        list-style: none;
+        padding: 0;
+    }
+
+        aside ul li {
+            background: url("../Images/bullet.png") no-repeat 0 50%;
+            padding: 2px 0 2px 20px;
+        }
+
+.label {
+    font-weight: 700;
+}
+
+/* main menu */
+ul.main-menu {
+    list-style: none;
+}
+
+    ul.main-menu li {
+        padding-top: 10px;
+    }
+
+        ul.main-menu li .button {
+            /*x-focus-border: none;*/ 
+            display: block; 
+            text-decoration: none; 
+            color: #4C4C4C; 
+            font-weight: bold;
+            background-image: url("../Images/button_middle_off.png");
+            background-repeat: repeat-x;
+            background-color: #e9e9e9;
+            height: 34px;
+        }
+       
+        ul.main-menu li .button-left {
+            vertical-align: middle;
+        }
+
+        ul.main-menu li .button-right {
+            float: right;
+        }
+
+/* login page */
+#loginForm {    
+    width: auto;
+    height: auto;
+}
+    
+/* contact */
+.contact h3 {
+    font-size: 1.2em;
+}
+
+.contact p {
+    margin: 5px 0 0 10px;
+}
+
+.contact a {
+    color: orangered;
+}
+
+/* forms */
+fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+    fieldset legend {
+        display: none;
+    }
+    
+    fieldset ol {
+        padding: 0;
+        list-style: none;        
+    }
+
+        fieldset ol li {
+            padding-bottom: 0;            
+        }
+
+    label {
+        display: block;
+        font-size: 1.2em;
+        font-weight: 600;
+        padding-left: 2px;                
+    }
+
+    label.checkbox {
+        display: inline;
+    }
+
+.Literals{
+        display: block;
+        font-size: 1.2em;
+        font-weight: 600;
+        padding-left: 2px;                
+    }
+
+
+
+    .textbox, textarea {
+        border: 1px solid #e2e2e2;        
+        background: #fff;
+        color: #333;
+        font-size: 1.2em;        
+        padding: 2px;
+}
+
+    textarea {
+        font-family: inherit;
+        width: 500px;
+    }
+    
+        .textbox:focus, textarea:focus {
+            border: 1px solid #7ac0da;            
+        }
+
+        .textbox.readonly {
+            background: #efeeef;
+            /*x-focus-border: none;*/
+        }
+
+            .textbox.readonly:focus {
+                border: 1px solid #e2e2e2;
+            }
+
+        input[type="checkbox"] {
+            background: transparent;
+            border: inherit;
+            width: auto;
+        }
+
+    select {
+        background: #fff;
+        color: #333;
+        font-size: 1.2em;
+        /*x-focus-border: none;*/
+        width: 165px;
+    }
+            
+    .button {
+        background-color: #d3dce0;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1.2em;
+        font-weight: 600;
+        padding: 2px;
+}
+
+        .button.tool {
+            font-size: 1em;
+            padding: 1px;
+        }
+
+    td input[type="submit"],
+    td input[type="button"],
+    td button {
+        font-size: 1em;
+        padding: 4px;
+        margin-right: 4px;
+    }
+
+    input {
+}   
+
+/* info and errors */
+.message-info {
+    border: 1px solid;
+    clear: both;
+    padding: 10px 20px;
+}
+
+.message-error {
+    clear: both;
+    color: #e80c4d;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.message-success {
+    color: #7ac0da;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+}
+
+.error {
+    color: #e80c4d;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #e80c4d;
+    font-weight: bold;
+    padding-left: 2px;  
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #e80c4d;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #e80c4d;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.validation-summary-valid {
+    color: #7ac0da;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* tables
+----------------------------------------------------------*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-top: 0.75em;
+    border: 1px solid #e2e2e2;
+}
+
+th {
+	font-size: 1.2em;
+    font-weight: bold;
+    text-align: left;
+    border: 1px solid #e2e2e2;
+    border-width: 0 0 1px;
+    background-color: #9aabb7;
+    padding: 0 0.5em 0 3px;
+}
+
+    th a {
+        display: block;
+        position: relative;        
+    }
+
+	th a:link, th a:visited, th a:active, th a:hover {
+		color: #333;
+		font-weight: 600;
+		text-decoration: none;
+        padding: 0;
+	}
+
+	th a:hover {
+		color: #000;
+	}
+
+    th.asc a, th.desc a {
+        margin-right: .75em;
+    }
+    
+    th.asc a:after, th.desc a:after {
+		display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 0.75em;
+	}
+
+	th.asc a:after {
+		content: '▲';
+	}
+
+	th.desc a:after {
+		content: '▼';
+	}
+
+td {
+    padding: 0.25em 0.5em 0.25em 3px;
+    border: 0 none;
+}
+
+    td input {
+
+    }
+
+tr.pager td {
+    padding: 0 0.25em 0 0;
+}

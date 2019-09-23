@@ -1,0 +1,56 @@
+/* basic previewKeyset setup - modify as desired */
+.ui-keyboard-keyset-normal .ui-keyboard-button {
+    position: relative;
+    height: 80px;
+    width: 80px;
+    font-size: 50px;
+}
+
+.ui-keyboard-keyset-meta1 .ui-keyboard-button {
+    position: relative;
+    height: 60px;
+    min-width: 80px;
+    font-size: 14px;
+}
+
+
+/* show mini-shift keyset with normal keyset */
+.ui-keyboard-keyset-normal .ui-keyboard-button::after {
+    content: attr(data-shift);
+    font-size: 0.6em;
+    color: #999;
+    position: absolute;
+    top: -1em;
+    left: 2px;
+    z-index: 200;
+}
+/* show mini-normal keyset with shift keyset */
+.ui-keyboard-keyset-shift .ui-keyboard-button::after {
+	content: attr(data-normal);
+	font-size: 0.6em;
+	color: #999;
+	position: absolute;
+	top: -1em;
+	left: 2px;
+	z-index: 200;
+}
+/* show mini-normal keyset with alt keyset */
+.ui-keyboard-keyset-alt .ui-keyboard-button::after {
+	content: attr(data-alt-shift);
+	font-size: 0.6em;
+	color: #999;
+	position: absolute;
+	top: -1em;
+	left: 2px;
+	z-index: 200;
+}
+/* show mini-alt-shift keyset with alt-shift keyset */
+.ui-keyboard-keyset-alt-shift .ui-keyboard-button::after {
+	content: attr(data-alt);
+	font-size: 0.6em;
+	color: #999;
+	position: absolute;
+	top: -1em;
+	left: 2px;
+	z-index: 200;
+}
